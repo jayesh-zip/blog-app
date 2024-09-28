@@ -22,7 +22,7 @@ import UserProvider from './context/userContext';
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "https://blog-app-dp8f.onrender.com",
     element: <UserProvider> <Layout/> </UserProvider>,
     errorElement: <ErrorPage />,
     children: [
@@ -31,7 +31,7 @@ const router = createBrowserRouter([
       {path: "register", element: <Register />},
       {path: "login", element: <Login />},
       {path: "profile/:id", element: <UserProfile />},
-      {path: "authors", element: <Authors />},
+      {path: "https://blog-app-dp8f.onrender.com/authors", element: <Authors />},
       {path: "create", element: <CreatePosts />},
       {path: "posts/categories/:category", element: <CategoryPosts />},
       {path: "posts/users/:id", element: <AuthorPosts />},

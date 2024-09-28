@@ -21,7 +21,7 @@ function DeletePost({ postId: id }) {
   const removePost = async () => {
     setIsLoading(true);
     try {
-      const response = await axios.delete(`https://blog-app-dp8f.onrender.com/posts/${id}`, {
+      const response = await axios.delete(`${process.env.REACT_APP_BASE_URL}/posts/${id}`, {
         withCredentials: true,
         headers: { Authorization: `Bearer ${token}` },
       });

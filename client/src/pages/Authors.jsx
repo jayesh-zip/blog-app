@@ -11,7 +11,7 @@ function Authors() {
     const getAuthor = async () => {
       setIsLoading(true)
       try {
-        const response = await axios.get(`https://blog-app-dp8f.onrender.com/users`)
+        const response = await axios.get(`${process.env.REACT_APP_BASE_URL}/users`)
         setAuthors(response.data)
       } catch (error) {
         console.error(error )

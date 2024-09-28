@@ -54,7 +54,7 @@ function CreatePosts() {
     postData.append('thumbnail', thumbnail); 
 
     try {
-      const response = await axios.post(`https://blog-app-dp8f.onrender.com/posts`, postData, {
+      const response = await axios.post(`${process.env.REACT_APP_BASE_URL}/posts`, postData, {
         withCredentials: true,
         headers: {
           Authorization: `Bearer ${token}`,
