@@ -28,7 +28,7 @@ function UserProfile() {
   useEffect(() => {
     const getUser = async () => {
       try {
-        const response = await axios.get(`${process.env.REACT_APP_BASE_URL}/users/${currentUser.id}`, {
+        const response = await axios.get(`https://blog-app-dp8f.onrender.com/users/${currentUser.id}`, {
           withCredentials: true,
           headers: { Authorization: `Bearer ${token}` },
         });
@@ -52,7 +52,7 @@ function UserProfile() {
 
     try {
       const response = await axios.post(
-        `${process.env.REACT_APP_BASE_URL}/users/change-avatar`,
+        `https://blog-app-dp8f.onrender.com/users/change-avatar`,
         formData,
         {
           headers: {
@@ -90,7 +90,7 @@ function UserProfile() {
         confirmNewPassword,
       };
 
-      const response = await axios.patch(`${process.env.REACT_APP_BASE_URL}/users/edit-user`, userData, {
+      const response = await axios.patch(`https://blog-app-dp8f.onrender.com/users/edit-user`, userData, {
         withCredentials: true,
         headers: { Authorization: `Bearer ${token}` },
       });

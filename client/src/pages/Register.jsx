@@ -22,7 +22,7 @@ function Register() {
     e.preventDefault()
     setError()
     try {
-      const response = await axios.post(`${process.env.REACT_APP_BASE_URL}/users/register`, userData)
+      const response = await axios.post(`$https://blog-app-dp8f.onrender.com/users/register`, userData)
       const newUser = await response.data;
       if(!newUser) {
         setError("Couldn't register user. Place try again.")

@@ -36,7 +36,7 @@ function EditPost() {
     const getPost = async () => {
       setLoading(true);
       try {
-        const response = await axios.get(`${process.env.REACT_APP_BASE_URL}/posts/${id}`);
+        const response = await axios.get(`https://blog-app-dp8f.onrender.com/posts/${id}`);
         setPost(response.data);
       } catch (error) {
         setError("Error fetching the post. Please try again.");
@@ -83,7 +83,7 @@ function EditPost() {
     if (post.thumbnail) formData.append('thumbnail', post.thumbnail);
 
     try {
-      const response = await axios.patch(`${process.env.REACT_APP_BASE_URL}/posts/${id}`, formData, {
+      const response = await axios.patch(`$https://blog-app-dp8f.onrender.com/posts/${id}`, formData, {
         withCredentials: true,
         headers: { Authorization: `Bearer ${token}` },
       });

@@ -24,7 +24,7 @@ function DashBoard() {
     const fetchPosts = async () => {
       setIsLoading(true);
       try {
-        const response = await axios.get(`${process.env.REACT_APP_BASE_URL}/posts/users/${id}`, {
+        const response = await axios.get(`https://blog-app-dp8f.onrender.com/posts/users/${id}`, {
           withCredentials: true,
           headers: { Authorization: `Bearer ${token}` }
         });

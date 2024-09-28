@@ -11,7 +11,7 @@ function Posts() {
         const fetchPosts = async () => {
             setIsLoading(true);
             try {
-                const response = await axios.get(`${process.env.REACT_APP_BASE_URL}/posts`);
+                const response = await axios.get(`https://blog-app-dp8f.onrender.com/posts`);
                 setPosts(response?.data);
             } catch (err) {
                 console.error(err); // Optionally keep this for error logging

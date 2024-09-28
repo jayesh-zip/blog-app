@@ -15,7 +15,7 @@ app.use(express.json({ extended: true }));
 app.use(express.urlencoded({ extended: true }));
 
 // Update CORS for production, replace localhost with your deployed frontend domain
-app.use(cors({ credentials: true, origin: "http://localhost:3000" })); // Change this to your production URL
+app.use(cors({ credentials: true, origin: "https://blog-app-dp8f.onrender.com" })); // Change this to your production URL
 
 // API routes
 app.use('/api/users', userRoutes);

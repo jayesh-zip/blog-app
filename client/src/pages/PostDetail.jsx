@@ -19,7 +19,7 @@ function PostDetail() {
     const getPost = async () => {
       setIsLoading(true);
       try {
-        const response = await axios.get(`${process.env.REACT_APP_BASE_URL}/posts/${id}`);
+        const response = await axios.get(`https://blog-app-dp8f.onrender.com/posts/${id}`);
         if (response.data) {
           setPost(response.data);
         } else {
