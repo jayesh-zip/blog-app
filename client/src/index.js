@@ -19,14 +19,16 @@ import DeletePost from './pages/DeletePost';
 import Logout from './pages/Logout';
 import CategoryPosts from './pages/CategoryPosts';
 import UserProvider from './context/userContext';
+import Hello from './pages/Hello';
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <UserProvider> <Layout/> </UserProvider>,
-    errorElement: <ErrorPage />,
+    element: <Hello/>,
+    // element: <UserProvider> <Layout/> </UserProvider>,
+    // errorElement: <ErrorPage />,
     children: [
-      {index: true, element: <Home />},
+      {index: true, element: <Hello />},
       {path: "posts/:id", element: <PostDetail />},
       {path: "register", element: <Register />},
       {path: "login", element: <Login />},
@@ -39,7 +41,7 @@ const router = createBrowserRouter([
       {path: "posts/:id/edit", element: <EditPost />},
       {path: "posts/:id/delete", element: <DeletePost />},
       {path: "logout", element: <Logout />},
-      {path: "*", element: <ErrorPage />}
+      // {path: "*", element: <ErrorPage />}
     ]
   }
 ]);
