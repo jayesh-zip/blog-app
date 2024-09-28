@@ -1,0 +1,31 @@
+const multer = require('multer');
+const { CloudinaryStorage } = require('multer-storage-cloudinary');
+const cloudinary = require('cloudinary').v2;
+const { v4: uuid } = require('uuid');
+
+// Configure Cloudinary with environment variables
+cloudinary.config({
+    cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+    api_key: process.env.CLOUDINARY_API_KEY,
+    api_secret: process.env.CLOUDINARY_API_SECRET
+});
+
+const storage = new CloudinaryStorage({
+    cloudinary: cloudinary,
+    params: {
+        folder: 'uploads',
+        format: async (req, file) => 'png',
+        public_id: (req, file) => {
+            // Generate a unique public ID using uuid
+            const uniqueId = uuid();
+            const fileName = file.originalname.split('.')[0];
+            return `${fileName}_${uniqueId}`;
+        }
+    },
+});
+
+const cloudinaryFileUploader = multer({ storage: storage });
+
+module.exports = {
+    cloudinaryFileUploader
+}
