@@ -19,7 +19,6 @@ import DeletePost from './pages/DeletePost';
 import Logout from './pages/Logout';
 import CategoryPosts from './pages/CategoryPosts';
 import UserProvider from './context/userContext';
-import Hello from './pages/Hello';
 
 const router = createBrowserRouter([
   {
